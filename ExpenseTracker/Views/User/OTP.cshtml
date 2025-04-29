@@ -46,8 +46,11 @@
                     $("#potp").show();
                 }
                 else{
-                    $("#potp").hide();
-                    alert("Clicked");
+                    $.ajax({
+                        url:"UserController/Register",
+                        type:"POST",
+                        
+                    })
                 }
             })
         })

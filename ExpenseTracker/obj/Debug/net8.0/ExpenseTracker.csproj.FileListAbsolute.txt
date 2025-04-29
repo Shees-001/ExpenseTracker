@@ -524,3 +524,4 @@ D:\Shees\ExpenseTracker\ExpenseTracker\bin\Debug\net8.0\runtimes\win\lib\net7.0\
 D:\Shees\ExpenseTracker\ExpenseTracker\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 D:\Shees\ExpenseTracker\ExpenseTracker\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 D:\Shees\ExpenseTracker\ExpenseTracker\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+D:\Shees\ExpenseTracker\ExpenseTracker\obj\Debug\net8.0\ExpenseTracker.sourcelink.json

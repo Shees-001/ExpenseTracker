@@ -32,15 +32,19 @@ namespace ExpenseTracker.Controllers
             {
                 string otp = new Random().Next(100000, 999999).ToString();
 
-                TempData["OTP"] = otp;
-                TempData["UserName"] = us.User_Name;
-                TempData["UserEmail"] = us.User_Email;
-                TempData["UserPassword"] = us.User_Password;
+                HttpContext.Session.SetString("OTP", otp);
+                HttpContext.Session.SetString("User_Name", us.User_Name);
+                HttpContext.Session.SetString("User_Email", us.User_Email);
+                HttpContext.Session.SetString("User_Password", us.User_Password);
 
                 await SendEmailAsync(us.User_Email, "Your OTP Code is :", $"Your OTP is {otp}");
-                return RedirectToAction("OTP"); 
+
+                return Json(new { success = true });
             }
-            return View();
+            else
+            {
+                return Json(new { success = false });
+            }
         }
 
         public async Task SendEmailAsync(string toEmail, string subject, string body)
@@ -63,26 +67,29 @@ namespace ExpenseTracker.Controllers
             return View();
         }
 
+        [HttpPost]
         public IActionResult OTP(string otp)
         {
-            string storedOTP = TempData["OTP"] as string;
+            string storedOTP = HttpContext.Session.GetString("OTP"); 
 
-            if (otp == storedOTP) 
+            if (otp == storedOTP)
             {
                 Users user = new Users
                 {
-                    User_Name = TempData["UserName"] as string,
-                    User_Email = TempData["UserEmail"] as string,
-                    User_Password = TempData["UserPassword"] as string,
+                    User_Name = HttpContext.Session.GetString("User_Name"),
+                    User_Email = HttpContext.Session.GetString("User_Email"),
+                    User_Password = HttpContext.Session.GetString("User_Password")
                 };
 
                 sc.Users.Add(user);
                 sc.SaveChanges();
                 return RedirectToAction("Login");
             }
+
+            // If OTP does not match
+            ViewBag.ErrorMessage = "Invalid OTP. Please try again.";
             return View();
         }
-
 
         public IActionResult Login()
         {

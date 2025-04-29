@@ -9,6 +9,8 @@ builder.Services.AddDbContext<SqlContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("dbcon"));
 });
+builder.Services.AddSession();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -21,7 +23,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseSession();
 app.UseRouting();
 
 app.UseAuthorization();

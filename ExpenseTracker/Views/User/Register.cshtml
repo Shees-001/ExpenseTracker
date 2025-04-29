@@ -43,39 +43,75 @@
 <script>
     $(document).ready(function(){
         $("#btnAddUser").click(function(){
-            var UserName = $("#name").val();
-            var UserEmail = $("#email").val();
-            var UserPassword = $("#password").val();
+
+            var UserName = $("#name").val().trim();
+            var UserEmail = $("#email").val().trim();
+            var UserPassword = $("#password").val().trim();
 
             if(UserName == "" && UserEmail == "" && UserPassword == ""){
                 $("#pname").show();
                 $("#pemail").show();
                 $("#ppass").show();
+                $("#error").hide();
+                return;
             }
             else if(UserName == ""){
                 $("#pname").show();
                 $("#pemail").hide();
                 $("#ppass").hide();
+                $("#error").hide();
+                return;
             }
             else if(UserEmail == ""){
-                $("#pemail").show();
                 $("#pname").hide();
+                $("#pemail").show();
                 $("#ppass").hide();
+                $("#error").hide();
+                return;
             }
             else if(UserPassword == ""){
-                 $("#pname").hide();
+                $("#pname").hide();
                 $("#pemail").hide();
                 $("#ppass").show();
+                $("#error").hide();
+                return;
             }
-            else if(UserPassword.length < 6 ){
+            else if(UserPassword.length < 6){
                 $("#error").show();
                 $("#pname").hide();
                 $("#pemail").hide();
                 $("#ppass").hide();
+                return;
             }
-            else {
-               window.location.href = "/User/OTP";
+
+            $("#pname").hide();
+            $("#pemail").hide();
+            $("#ppass").hide();
+            $("#error").hide();
+
+            var user = {
+                User_Name: UserName,
+                User_Email: UserEmail,
+                User_Password: UserPassword
+            };
+
+            $.ajax({
+                url: "/User/Register",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(user),
+                success: function(response){
+                console.log("Response from server:", response); 
+
+                    if(response.success){
+                        window.location.href = "/User/OTP";
+                    } else {
+                    alert("Registration Failed. Please try again later");
+                    }
+                },
             }
-        })
-    })
+           });
+
+        });
+    });
 </script>
