@@ -14,8 +14,7 @@ namespace ExpenseTracker.Models
         public string User_Email { get; set; }
         [Required]
         public string User_Password { get; set; }
-        [Required]
-        public string OTP { get; set; }
+        public string? OTP { get; set; }
         [DefaultValue(0)]
         public int User_Role { get; set; }
     }
