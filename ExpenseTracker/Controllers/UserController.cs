@@ -73,7 +73,6 @@ namespace ExpenseTracker.Controllers
                 Port = 587,
                 EnableSsl = true,
                 Credentials = new NetworkCredential(fromEmail, emailPassword)
-
             };
                 
             var message = new MailMessage(fromEmail, toEmail, subject, body);
@@ -143,6 +142,46 @@ namespace ExpenseTracker.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Login([FromBody] Users us)
+        {
+            string hashedPass = Convert.ToBase64String(
+                SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(us.User_Password))    
+            );
+
+            var existUser = sc.Users.FirstOrDefault(u => u.User_Email == us.User_Email && u.User_Password == hashedPass);
+            
+            if (existUser != null)
+            {
+                HttpContext.Session.SetInt32("UserId", existUser.User_Id);
+                HttpContext.Session.SetString("UserEmail", existUser.User_Email);
+                return Json(new { success = true, message = "User Logged In Successfully" });
+            }
+            else
+            {
+                return Json(new { success = false, message = "Invalid Email or Password" });
+            }
+           
+        }
+
+
+        public IActionResult Expenses()
+        {
+            var sessionId = HttpContext.Session.GetInt32("UserId");
+            var sessionEmail = HttpContext.Session.GetString("UserEmail");
+
+            if(sessionId != null && sessionEmail != "")
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "User");
+            }
+
+        }
+
+
     }
 }
     

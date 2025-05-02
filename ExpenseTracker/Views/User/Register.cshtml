@@ -49,7 +49,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
 <script>
-      $(document).ready(function () {
+    $(document).ready(function () {
         $("#btnAddUser").click(function () {
 
             var UserName = $("#name").val().trim();
@@ -96,6 +96,10 @@
             $("#pemail").hide();
             $("#ppass").hide();
             $("#error").hide();
+            $("#existEmailerror").hide();
+
+            $("#loader").removeClass("d-none");
+            $("#btnAddUser").prop("disabled", true);
 
             var user = {
                 User_Name: UserName,
@@ -104,23 +108,25 @@
             };
 
             $.ajax({
-                url: "/User/Register",
-                type: "POST",
-                contentType: "application/json",
-                data: JSON.stringify(user),
-                success: function (response) {
-                       $("#loader").removeClass("d-none");
-                    if (response.success) {
-                        window.location.href = "/User/OTP";
-                    }
-                    else {
-                        if (response.message === "Email Already Exists") 
-                        {
-                            $("#existEmailerror").show();
-                            $("#loader").addClass("d-none");
-                        }
-                    }
-                }
+            url: "/User/Register",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(user),
+            success: function (response) {
+            if (response.success) {
+                window.location.href = "/User/OTP";
+            } else {
+                if (response.message === "Email Already Exists") {
+                $("#existEmailerror").show();
+                $("#loader").addClass("d-none");
+                $("#btnAddUser").prop("disabled", false);}
+            }
+            },
+            error: function () {
+                alert("Something went wrong. Please try again.");
+                $("#loader").addClass("d-none");
+                $("#btnAddUser").prop("disabled", false); 
+            }
             });
 
         });
