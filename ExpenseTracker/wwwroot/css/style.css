@@ -1,0 +1,69 @@
+﻿.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.amount-income {
+    color: green;
+}
+
+.amount-expense {
+    color: red;
+}
+
+.amount-balance {
+    color: #28a745;
+}
+
+.icon {
+    vertical-align: middle;
+}
+
+.user-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+    .user-dropdown:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: white;
+    color: #5b61fc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.dropdown-menu {
+    min-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.dropdown-item {
+    padding: 8px 16px;
+}
+
+.dropdown-divider {
+    margin: 4px 0;
+}
+
+.email-display {
+    font-size: 0.85rem;
+    color: #6c757d;
+    padding: 0 16px 8px;
+    display: block;
+}

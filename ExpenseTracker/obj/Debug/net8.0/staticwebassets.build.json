@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pdDR07/kM3iPnfsLZiuEK3OuBCA1thomSX/ND3CV268=",
+  "Hash": "4cAeVftawAhPf9cnY0flDuwKpqYRDx7rVmbcr0Ce45U=",
   "Source": "ExpenseTracker",
   "BasePath": "_content/ExpenseTracker",
   "Mode": "Default",
@@ -78,6 +78,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\wwwroot\\css\\style.css",
+      "SourceId": "ExpenseTracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\wwwroot\\",
+      "BasePath": "_content/ExpenseTracker",
+      "RelativePath": "css/style#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "sxqrj56vk8",
+      "Integrity": "IAioFzUVIdcYClW9c2fGEUil1Ru7GFi5B6loF0xN9u0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
       "Identity": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\wwwroot\\favicon.ico",
@@ -1399,6 +1420,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+        }
+      ]
+    },
+    {
+      "Route": "css/style.css",
+      "AssetFile": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\wwwroot\\css\\style.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1131"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IAioFzUVIdcYClW9c2fGEUil1Ru7GFi5B6loF0xN9u0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 10:19:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IAioFzUVIdcYClW9c2fGEUil1Ru7GFi5B6loF0xN9u0="
+        }
+      ]
+    },
+    {
+      "Route": "css/style.sxqrj56vk8.css",
+      "AssetFile": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\wwwroot\\css\\style.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1131"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IAioFzUVIdcYClW9c2fGEUil1Ru7GFi5B6loF0xN9u0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 10:19:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "sxqrj56vk8"
+        },
+        {
+          "Name": "label",
+          "Value": "css/style.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IAioFzUVIdcYClW9c2fGEUil1Ru7GFi5B6loF0xN9u0="
         }
       ]
     },

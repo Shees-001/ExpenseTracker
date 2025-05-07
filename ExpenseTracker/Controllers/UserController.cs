@@ -7,19 +7,20 @@ using ExpenseTracker.Database;
 using System.Security.Cryptography;
 using System.Text;
 using System.Drawing;
+using Microsoft.AspNetCore.Authentication;
 
 namespace ExpenseTracker.Controllers
 {
     public class UserController : Controller
     {
-        SqlContext sc;
-        private readonly IConfiguration _configuration;
+            SqlContext sc;
+            private readonly IConfiguration _configuration;
 
-        public UserController(SqlContext sc1, IConfiguration configuration)
-        {
-            this.sc = sc1;
-            _configuration = configuration;
-        }
+            public UserController(SqlContext sc1, IConfiguration configuration)
+            {
+                this.sc = sc1;
+                _configuration = configuration;
+            }
 
         public IActionResult Index()
         {
@@ -56,7 +57,7 @@ namespace ExpenseTracker.Controllers
                 await SendEmailAsync(us.User_Email, "Expense Tracker OTP", $"Your OTP is {otp}");
 
                 return Json(new { success = true });
-            }
+             }
             else
             {
                 return Json(new { success = false });
@@ -179,6 +180,34 @@ namespace ExpenseTracker.Controllers
                 return RedirectToAction("Login", "User");
             }
 
+        }
+
+        [HttpPost]
+        public JsonResult Logout()
+        {
+            HttpContext.Session.Clear();
+            HttpContext.SignOutAsync();
+            return Json(new {success= true});
+        }
+
+        public IActionResult ForgetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ForgetPass([FromBody] string email)
+        {
+            if (ModelState.IsValid)
+            {
+                var EmailExist = sc.Users.FirstOrDefault(a => a.User_Email == email);
+                if (EmailExist == null)
+                {
+                    return Json(new { success = false, message = "email not exist" });
+                }
+                return Json(new {success = true });
+            }
+            return Json(new {success= false});
         }
 
 
