@@ -196,7 +196,7 @@ namespace ExpenseTracker.Controllers
         }
 
         [HttpPost]
-        public IActionResult ForgetPass([FromBody] string email)
+        public async Task<IActionResult> ForgetPass(string email)
         {
             if (ModelState.IsValid)
             {
@@ -205,7 +205,14 @@ namespace ExpenseTracker.Controllers
                 {
                     return Json(new { success = false, message = "email not exist" });
                 }
-                return Json(new {success = true });
+
+                var otp = new Random().Next(100000, 999999).ToString();
+                HttpContext.Session.SetString("User_Email", email);
+                HttpContext.Session.SetString("otp", otp);
+
+                await SendEmailAsync(email, "Change Password OTP", $"Your OTP is: {otp}");
+
+                return Json(new {success = true, message= "OTP Send To your Email"});
             }
             return Json(new {success= false});
         }
