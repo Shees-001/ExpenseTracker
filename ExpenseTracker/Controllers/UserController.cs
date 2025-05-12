@@ -209,6 +209,7 @@ namespace ExpenseTracker.Controllers
                 var otp = new Random().Next(100000, 999999).ToString();
                 HttpContext.Session.SetString("User_Email", email);
                 HttpContext.Session.SetString("otp", otp);
+                HttpContext.Session.SetString("PassOtp_CreatedTime", DateTime.UtcNow.ToString());
 
                 await SendEmailAsync(email, "Change Password OTP", $"Your OTP is: {otp}");
 
@@ -217,7 +218,44 @@ namespace ExpenseTracker.Controllers
             return Json(new {success= false});
         }
 
+        public IActionResult PassOTP()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult PassOTP(string otp)
+        {
+            string storedOTP = HttpContext.Session.GetString("otp");
+            string createdAt = HttpContext.Session.GetString("PassOtp_CreatedTime");
+
+            if (DateTime.TryParse(createdAt, out DateTime otpCreatedTime))
+            {
+                if ((DateTime.UtcNow - otpCreatedTime).TotalMinutes > 1)
+                {
+                    return Json(new { success = false, message = "OTP Expired" });
+                }
+            }
+
+            if(otp.Trim() == storedOTP.Trim())
+            {
+                return Json(new { success = true });
+            }
+
+            return Json(new {success = false});
+        }
+
+        public IActionResult UpdatePassword()
+        {
+            return View();
+        }
 
     }
 }
     
+
+
+
+
+
+
