@@ -62,6 +62,7 @@
             timer = 60;
             timerInterval = setInterval(function(){
                 if(timer > 0){
+                   $("#resendPassOTP").css("pointer-events", "none").css("opacity", "0.5");
                     $("#timer").text("OTP expires in " + timer + "seconds");
                     timer--;
                 }
@@ -69,6 +70,7 @@
                     clearInterval(timerInterval);
                     $("#timer").text("OTP Expired");
                     $("#btnPassOTP").prop("disabled", true);
+                    $("#resendPassOTP").css("pointer-events", "auto").css("opacity", "1");
                 }
             },1000);
         }
@@ -108,8 +110,29 @@
                     })
                 }
 
+            });
+
+            $("#resendPassOTP").click(function(){
+                $.ajax({
+                    url:"/User/PassOPTResend",
+                    type:"POST",
+                    success: function(response){
+                        $("#loader").removeClass("d-none");
+                        if(response.success){
+                            alert("OPT Resend to your Email");
+                            startTimer();
+                        }
+                    },
+                    error:function(xhr,status,error){
+                        console.log("Error : ", error);
+                    }
+                })
             })
-        })
+
+        });
+
+
+
 
     </script>
 

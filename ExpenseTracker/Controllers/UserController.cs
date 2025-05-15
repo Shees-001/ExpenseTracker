@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Drawing;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Identity;
 
 namespace ExpenseTracker.Controllers
 {
@@ -83,7 +84,17 @@ namespace ExpenseTracker.Controllers
 
         public IActionResult OTP()
         {
-            return View();
+            var userid = HttpContext.Session.GetString("UserId");
+            var useremail = HttpContext.Session.GetString("User_Email");
+
+            if(userid != "" && useremail != "")
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "User");
+            }
         }
 
         [HttpPost]
@@ -220,7 +231,18 @@ namespace ExpenseTracker.Controllers
 
         public IActionResult PassOTP()
         {
-            return View();
+            var sessionId = HttpContext.Session.GetInt32("UserId");
+            var sessionEmail = HttpContext.Session.GetString("UserEmail");
+
+            if (sessionId != null && sessionEmail != "")
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "User");
+            }
+
         }
 
         [HttpPost]
@@ -245,9 +267,50 @@ namespace ExpenseTracker.Controllers
             return Json(new {success = false});
         }
 
+        public async Task<IActionResult> PassOPTResend()
+        {
+            var email = HttpContext.Session.GetString("User_Email");
+
+            var otp = new Random().Next(100000, 999999).ToString();
+
+            HttpContext.Session.SetString("otp", otp);
+            HttpContext.Session.SetString("PassOtp_CreatedTime", DateTime.UtcNow.ToString());
+
+            var subject = "Change Password New OTP";
+            var body = $"Your Change Password New OTP is : {otp}";
+
+            await SendEmailAsync(email, subject, body);
+
+            return Json(new { success = true });
+
+        }
+
         public IActionResult UpdatePassword()
         {
-            return View();
+            var sessionId = HttpContext.Session.GetInt32("UserId");
+            var sessionEmail = HttpContext.Session.GetString("UserEmail");
+
+            if (sessionId != null && sessionEmail != "")
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "User");
+            }
+
+        }
+
+        [HttpPost]
+        public IActionResult UpdatePass(string password)
+        {
+            string email = HttpContext.Session.GetString("User_Email");
+
+            var user = sc.Users.FirstOrDefault(u => u.User_Email == email);
+            string hashedPass = Convert.ToBase64String(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(password)));
+            user.User_Password = hashedPass;
+            sc.SaveChanges();
+            return Json(new { success = true, message = "Password Updated Successfully"});
         }
 
     }

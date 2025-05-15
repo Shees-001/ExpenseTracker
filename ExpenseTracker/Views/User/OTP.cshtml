@@ -61,12 +61,14 @@
             timer = 60;
             timerInterval = setInterval(function () {
                 if (timer > 0) {
+                    $("#resendPassOTP").css("pointer-events", "none").css("opacity", "0.5");
                     $("#timer").text("OTP expires in " + timer + " seconds");
                     timer--;
                 } else {
                     clearInterval(timerInterval);
                     $("#timer").text("OTP expired.");
                     $("#btnOTP").prop("disabled", true);
+                    $("#resendPassOTP").css("pointer-events", "auto").css("opacity", "1");
                 }
             }, 1000);
         }
