@@ -231,18 +231,7 @@ namespace ExpenseTracker.Controllers
 
         public IActionResult PassOTP()
         {
-            var sessionId = HttpContext.Session.GetInt32("UserId");
-            var sessionEmail = HttpContext.Session.GetString("UserEmail");
-
-            if (sessionId != null && sessionEmail != "")
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login", "User");
-            }
-
+            return View();
         }
 
         [HttpPost]
@@ -287,18 +276,7 @@ namespace ExpenseTracker.Controllers
 
         public IActionResult UpdatePassword()
         {
-            var sessionId = HttpContext.Session.GetInt32("UserId");
-            var sessionEmail = HttpContext.Session.GetString("UserEmail");
-
-            if (sessionId != null && sessionEmail != "")
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login", "User");
-            }
-
+           return View();
         }
 
         [HttpPost]

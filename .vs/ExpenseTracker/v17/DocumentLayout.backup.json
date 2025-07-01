@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "D:\\Shees\\ExpenseTracker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C242522F-F219-4E1F-8AEF-561BC7F863AC}|ExpenseTracker\\ExpenseTracker.csproj|d:\\shees\\expensetracker\\expensetracker\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C242522F-F219-4E1F-8AEF-561BC7F863AC}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C242522F-F219-4E1F-8AEF-561BC7F863AC}|ExpenseTracker\\ExpenseTracker.csproj|d:\\shees\\expensetracker\\expensetracker\\views\\user\\otp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C242522F-F219-4E1F-8AEF-561BC7F863AC}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\views\\user\\otp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C242522F-F219-4E1F-8AEF-561BC7F863AC}|ExpenseTracker\\ExpenseTracker.csproj|d:\\shees\\expensetracker\\expensetracker\\views\\user\\passotp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C242522F-F219-4E1F-8AEF-561BC7F863AC}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\views\\user\\passotp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C242522F-F219-4E1F-8AEF-561BC7F863AC}|ExpenseTracker\\ExpenseTracker.csproj|d:\\shees\\expensetracker\\expensetracker\\views\\user\\updatepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C242522F-F219-4E1F-8AEF-561BC7F863AC}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\views\\user\\updatepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C242522F-F219-4E1F-8AEF-561BC7F863AC}|ExpenseTracker\\ExpenseTracker.csproj|d:\\shees\\expensetracker\\expensetracker\\views\\user\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C242522F-F219-4E1F-8AEF-561BC7F863AC}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\views\\user\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C242522F-F219-4E1F-8AEF-561BC7F863AC}|ExpenseTracker\\ExpenseTracker.csproj|d:\\shees\\expensetracker\\expensetracker\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C242522F-F219-4E1F-8AEF-561BC7F863AC}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C242522F-F219-4E1F-8AEF-561BC7F863AC}|ExpenseTracker\\ExpenseTracker.csproj|d:\\shees\\expensetracker\\expensetracker\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C242522F-F219-4E1F-8AEF-561BC7F863AC}|ExpenseTracker\\ExpenseTracker.csproj|solutionrelative:expensetracker\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,17 +22,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Register.cshtml",
               "DocumentMoniker": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\Views\\User\\Register.cshtml",
               "RelativeDocumentMoniker": "ExpenseTracker\\Views\\User\\Register.cshtml",
               "ToolTip": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\Views\\User\\Register.cshtml",
               "RelativeToolTip": "ExpenseTracker\\Views\\User\\Register.cshtml",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAAAE8AAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACYAAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-15T09:54:07Z",
               "IsPinned": true,
@@ -52,52 +44,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UpdatePassword.cshtml",
-              "DocumentMoniker": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\Views\\User\\UpdatePassword.cshtml",
-              "RelativeDocumentMoniker": "ExpenseTracker\\Views\\User\\UpdatePassword.cshtml",
-              "ToolTip": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\Views\\User\\UpdatePassword.cshtml",
-              "RelativeToolTip": "ExpenseTracker\\Views\\User\\UpdatePassword.cshtml",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAFoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-15T09:52:33.103Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "OTP.cshtml",
-              "DocumentMoniker": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\Views\\User\\OTP.cshtml",
-              "RelativeDocumentMoniker": "ExpenseTracker\\Views\\User\\OTP.cshtml",
-              "ToolTip": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\Views\\User\\OTP.cshtml",
-              "RelativeToolTip": "ExpenseTracker\\Views\\User\\OTP.cshtml",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAAAHYAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-15T04:42:39.258Z",
+              "Title": "Users.cs",
+              "DocumentMoniker": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\Models\\Users.cs",
+              "RelativeDocumentMoniker": "ExpenseTracker\\Models\\Users.cs",
+              "ToolTip": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\Models\\Users.cs",
+              "RelativeToolTip": "ExpenseTracker\\Models\\Users.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T09:49:36.869Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PassOTP.cshtml",
-              "DocumentMoniker": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\Views\\User\\PassOTP.cshtml",
-              "RelativeDocumentMoniker": "ExpenseTracker\\Views\\User\\PassOTP.cshtml",
-              "ToolTip": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\Views\\User\\PassOTP.cshtml",
-              "RelativeToolTip": "ExpenseTracker\\Views\\User\\PassOTP.cshtml",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-12T10:12:20.473Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "ExpenseTracker\\Controllers\\UserController.cs",
               "ToolTip": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\Controllers\\UserController.cs",
               "RelativeToolTip": "ExpenseTracker\\Controllers\\UserController.cs",
-              "ViewState": "AgIAABUBAAAAAAAAAAAAACgBAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-02T10:33:43.868Z",
               "EditorCaption": ""
