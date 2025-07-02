@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\wwwroot\\images\\icon\\facicon.png",
+      "PackagePath": "staticwebassets\\images\\icon\\facicon.png"
+    },
+    {
       "Id": "D:\\Shees\\ExpenseTracker\\ExpenseTracker\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

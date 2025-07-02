@@ -29,11 +29,21 @@
                             <p id="error" style="color:red;display:none">Password Length Must be Greater than 6 Character</p>
                         </div>
 
-                        <div class="mb-3 text-start">
-                            <label class="form-label">Face Capture (for Login)</label>
-                            <video id="video" width="320" height="240" autoplay class="border rounded"></video><br />
+                        <button type="button" id="facelockbutton">
+                            <img src="~/images/icon/facicon.png"/>
+                        </button>
+                        <br />
+                        <p id="addfacelock">Add Face Lock</p>
+
+                        <div class="mb-3 text-start" id="facelockbox" style="display: none;">
+                            <div style="display: flex; justify-content: center; align-items: center;">
+                                <video id="video" width="320" height="240" autoplay class="border rounded"></video>
+                            </div>
                             <canvas id="canvas" style="display:none;"></canvas><br />
-                            <button type="button" id="btnCaptureFace" class="btn btn-outline-secondary btn-sm mt-2">Capture Face</button>
+                            <div style="display: flex; justify-content: center; align-items: center;">
+                                <button type="button" id="btnCaptureFace" class="btn btn-outline-secondary btn-sm mt-2">Capture Face</button>
+                                <button type="button" id="btnCancelFaceLock" class="btn btn-outline-secondary btn-sm mt-2">Cancel</button>
+                            </div>
                             <input type="hidden" id="faceImageData" name="FaceImageData" />
                             <p id="noface" style="color:red;display:none;">Please capture your face</p>
                             <p id="cameraError" class="text-danger" style="display:none;"></p>
@@ -61,6 +71,17 @@
 
 <script>
 
+    $(document).ready(function(){
+        $("#facelockbutton").click(function(){
+            $("#facelockbox").show();
+            $("#facelockbutton").hide();
+        })
+        $("#btnCancelFaceLock").click(function(){
+            $("#facelockbox").hide();
+            $("#facelockbutton").show();
+        })
+    })
+
     navigator.mediaDevices.getUserMedia({video : true}).then(stream => {
         document.getElementById("video").srcObject = stream;
     }).catch(error => {
@@ -75,7 +96,7 @@
         const video = document.getElementById("video");
         
         canvas.width = video.videoWidth;
-        canvas.heigth = vido.videoHeight;
+        canvas.heigth = video.videoHeight;
 
         const context = canvas.getContext("2d");
         context.drawImage(video, 0, 0);
@@ -94,6 +115,7 @@
             var UserName = $("#name").val().trim();
             var UserEmail = $("#email").val().trim();
             var UserPassword = $("#password").val().trim();
+            var faceimage = $("#FaceImageData").val();
 
             if (UserName == "" && UserEmail == "" && UserPassword == "") {
                 $("#pname").show();
@@ -102,34 +124,34 @@
                 $("#error").hide();
                 return;
             }
-            else if (UserName == "") {
-                $("#pname").show();
-                $("#pemail").hide();
-                $("#ppass").hide();
-                $("#error").hide();
-                return;
-            }
-            else if (UserEmail == "") {
-                $("#pname").hide();
-                $("#pemail").show();
-                $("#ppass").hide();
-                $("#error").hide();
-                return;
-            }
-            else if (UserPassword == "") {
-                $("#pname").hide();
-                $("#pemail").hide();
-                $("#ppass").show();
-                $("#error").hide();
-                return;
-            }
-            else if (UserPassword.length < 6) {
-                $("#error").show();
-                $("#pname").hide();
-                $("#pemail").hide();
-                $("#ppass").hide();
-                return;
-            }
+             else if (UserName == "") {
+                 $("#pname").show();
+                 $("#pemail").hide();
+                 $("#ppass").hide();
+                 $("#error").hide();
+                 return;
+             }
+             else if (UserEmail == "") {
+                 $("#pname").hide();
+                 $("#pemail").show();
+                 $("#ppass").hide();
+                 $("#error").hide();
+                 return;
+             }
+             else if (UserPassword == "") {
+                 $("#pname").hide();
+                 $("#pemail").hide();
+                 $("#ppass").show();
+                 $("#error").hide();
+                 return;
+             }
+             else if (UserPassword.length < 6) {
+                 $("#error").show();
+                 $("#pname").hide();
+                 $("#pemail").hide();
+                 $("#ppass").hide();
+                 return;
+             }
 
             $("#pname").hide();
             $("#pemail").hide();
@@ -147,7 +169,7 @@
             };
 
             $.ajax({
-            url: "/User/Register",
+            url: "/User/UserRegister",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify(user),

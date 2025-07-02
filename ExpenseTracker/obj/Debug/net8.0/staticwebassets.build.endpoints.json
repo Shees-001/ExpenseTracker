@@ -331,6 +331,88 @@
       ]
     },
     {
+      "Route": "images/icon/facicon.fk9vblfay5.png",
+      "AssetFile": "images/icon/facicon.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0e6JlNbpYqe9O2G4jKdfiPrzswPFgcFUm4XEaXdE2lY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 02 Jul 2025 05:25:04 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fk9vblfay5"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0e6JlNbpYqe9O2G4jKdfiPrzswPFgcFUm4XEaXdE2lY="
+        },
+        {
+          "Name": "label",
+          "Value": "images/icon/facicon.png"
+        }
+      ]
+    },
+    {
+      "Route": "images/icon/facicon.png",
+      "AssetFile": "images/icon/facicon.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0e6JlNbpYqe9O2G4jKdfiPrzswPFgcFUm4XEaXdE2lY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 02 Jul 2025 05:25:04 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0e6JlNbpYqe9O2G4jKdfiPrzswPFgcFUm4XEaXdE2lY="
+        }
+      ]
+    },
+    {
       "Route": "js/site.js",
       "AssetFile": "js/site.js",
       "Selectors": [],
