@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Drawing;
 
 namespace ExpenseTracker.Models
@@ -17,5 +18,7 @@ namespace ExpenseTracker.Models
         public string? OTP { get; set; }
         [DefaultValue(0)]
         public int User_Role { get; set; }
+        [NotMapped]
+        public string? FaceImage { get; set; }
     }
 }

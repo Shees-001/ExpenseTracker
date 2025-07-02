@@ -94,6 +94,7 @@
             var UserName = $("#name").val().trim();
             var UserEmail = $("#email").val().trim();
             var UserPassword = $("#password").val().trim();
+            var faceImage = $("#faceImageData").val();
 
             if (UserName == "" && UserEmail == "" && UserPassword == "") {
                 $("#pname").show();
@@ -128,6 +129,10 @@
                 $("#pname").hide();
                 $("#pemail").hide();
                 $("#ppass").hide();
+                return;
+            }
+            else if(!faceImage){
+                $("#noface").show();
                 return;
             }
 

@@ -32,7 +32,7 @@ namespace ExpenseTracker.Migrations
                     User_Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     User_Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     User_Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    OTP = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    OTP = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     User_Role = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
