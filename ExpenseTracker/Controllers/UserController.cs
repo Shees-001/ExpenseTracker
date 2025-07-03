@@ -34,11 +34,8 @@ namespace ExpenseTracker.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register([FromBody] Users us)
+        public async Task<IActionResult> UserRegister([FromBody] Users us)
         {
-            if (ModelState.IsValid)
-            {
-
                 var emailExist = sc.Users.FirstOrDefault(u => u.User_Email == us.User_Email);
                 if (emailExist != null)
                 {
@@ -58,11 +55,7 @@ namespace ExpenseTracker.Controllers
                 await SendEmailAsync(us.User_Email, "Expense Tracker OTP", $"Your OTP is {otp}");
 
                 return Json(new { success = true });
-             }
-            else
-            {
-                return Json(new { success = false });
-            }
+             
         }   
 
         public async Task SendEmailAsync(string toEmail, string subject, string body)
