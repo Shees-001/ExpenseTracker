@@ -5,7 +5,7 @@
 namespace ExpenseTracker.Migrations
 {
     /// <inheritdoc />
-    public partial class m2 : Migration
+    public partial class m : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -33,7 +33,8 @@ namespace ExpenseTracker.Migrations
                     User_Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     User_Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     OTP = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    User_Role = table.Column<int>(type: "int", nullable: false)
+                    User_Role = table.Column<int>(type: "int", nullable: false),
+                    FaceStatus = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

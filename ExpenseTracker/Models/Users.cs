@@ -20,6 +20,8 @@ namespace ExpenseTracker.Models
         public int User_Role { get; set; }
         [NotMapped]
         public string? face_image { get; set; }
+        public string? FaceStatus { get; set; } = "no_face";
+
 
     }
 }

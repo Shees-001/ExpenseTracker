@@ -47,6 +47,7 @@
                             <input type="hidden" id="faceImageData" name="FaceImageData" />
                             <p id="noface" style="color:red;display:none;">Please capture your face</p>
                             <p id="cameraError" class="text-danger" style="display:none;"></p>
+                            <p id="captureSuccessMsg" class="text-success" style="display:none;">Face image captured successfully!</p>
                         </div>
 
                         <button type="button" id="btnAddUser" class="btn btn-primary w-100">Register</button>
@@ -96,7 +97,7 @@
         const video = document.getElementById("video");
         
         canvas.width = video.videoWidth;
-        canvas.heigth = video.videoHeight;
+        canvas.height = video.videoHeight; 
 
         const context = canvas.getContext("2d");
         context.drawImage(video, 0, 0);
@@ -105,6 +106,15 @@
         $("#faceImageData").val(imageData);
         $("#noface").hide();
     
+         $("#cameraError").hide();
+
+        $("#captureSuccessMsg").show();
+
+      
+        setTimeout(() => {
+            $("#captureSuccessMsg").fadeOut();
+            $("#facelockbox").hide();
+        }, 3000);
     });
 
 
@@ -164,7 +174,8 @@
             var user = {
                 User_Name: UserName,
                 User_Email: UserEmail,
-                User_Password: UserPassword
+                User_Password: UserPassword,
+                face_image : faceImage
             };
 
             $.ajax({

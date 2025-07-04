@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExpenseTracker.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    [Migration("20250703043540_m2")]
-    partial class m2
+    [Migration("20250704051404_m")]
+    partial class m
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,6 +48,9 @@ namespace ExpenseTracker.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("User_Id"));
+
+                    b.Property<string>("FaceStatus")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("OTP")
                         .HasColumnType("nvarchar(max)");

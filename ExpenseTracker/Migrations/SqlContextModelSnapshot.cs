@@ -46,6 +46,9 @@ namespace ExpenseTracker.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("User_Id"));
 
+                    b.Property<string>("FaceStatus")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("OTP")
                         .HasColumnType("nvarchar(max)");
 
